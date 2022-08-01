@@ -38,8 +38,8 @@
                                 {{ $quiz->finished_at }}
                             </td>
                             <td class="py-4 px-6">
-                                <a href="#" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center mr-2 mb-2"><i class="fa-solid fa-pen"></i></a>
-                                <a href="#" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center mr-2 mb-2"><i class="fa-solid fa-x"></i></a>
+                                <a href="{{ route('quizzes.edit', $quiz->id) }}" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center mr-2 mb-2"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{{ route('quizzes.destroy', $quiz->id) }}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-3.5 py-2.5 text-center mr-2 mb-2"><i class="fa-solid fa-x"></i></a>
                             </td>
                         </tr>
                     @endforeach
