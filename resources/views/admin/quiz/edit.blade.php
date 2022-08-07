@@ -15,6 +15,14 @@
                     <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">{{ $quiz->description }}</textarea>
                 </div>
                 <div class="mb-6 px-2 mt-4">
+                    <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Quiz Durumu</label>
+                    <select id="status" name="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                        <option @disabled($quiz->questions_count < 10) @selected($quiz->status == 'publish') value="publish">Yayında</option>
+                        <option @selected($quiz->status == 'draft') value="draft">Taslak</option>
+                        <option @selected($quiz->status == 'passive') value="passive">Pasif</option>
+                    </select>
+                </div>
+                <div class="mb-6 px-2 mt-4">
                     <input id="isFinished" type="checkbox" name="isFinished" @if ($quiz->finished_at != "") checked @endif class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
                     <label for="isFinished" class="ml-2 text-sm font-medium text-gray-900">Bitiş tarihi olacak mı?</label>
                 </div>
